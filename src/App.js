@@ -3,6 +3,7 @@ import Blogs from "./components/Blogs";
 import UserBlogs from "./components/UserBlogs";
 import BlogDetail from "./components/BlogDetail";
 import AddBlog from "./components/AddBlog";
+import Home from "./components/Home";
 
 import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
@@ -27,7 +28,9 @@ function App() {
       <main>
         <Routes>
           {!isLoggedIn ? (
+            <><Route path="/" element={<Home />} />
             <Route path="/auth" element={<Auth />} />
+            </>
           ) : (
             <>
               <Route path="/blogs" element={<Blogs />} />
